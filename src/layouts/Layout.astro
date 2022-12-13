@@ -1,0 +1,36 @@
+---
+import "../assets/css/base.css";
+import site from "../config/site";
+
+export interface Props{
+    language?: string;
+    title?: string;
+    description?: string;
+    keywords?: string;
+    author?: string;
+}
+
+const {language = site.defaultLocale, title = site.title, description = site.description, keywords = site.keywords, author = site.author} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang={language}>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content={description}>
+    <meta name="keywords" content={keywords}>
+    <meta name="author" content={author}>
+
+    <title>{title}</title>
+</head>
+<body>
+
+    <slot/>
+    
+    <script>
+        // global scripts to be bundled by Astro.
+    </script>
+    <!-- Tracking codes starts -->
+</body>
+</html>
