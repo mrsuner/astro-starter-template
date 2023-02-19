@@ -12,8 +12,11 @@ import image from "@astrojs/image";
 // https://astro.build/config
 import compress from "astro-compress";
 
+import siteConfig from "./src/config/site.js";
+
 // https://astro.build/config
 export default defineConfig({
+  site: siteConfig.baseUrl,
   integrations: [
     tailwind({
     config: {
