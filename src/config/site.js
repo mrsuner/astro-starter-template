@@ -2,6 +2,8 @@ export default {
 
     baseUrl: "https://astro-starter-template.soft.pw",
     
+    useSW: true,
+    
     defaultLocale: 'en',
     
     // the default site author
